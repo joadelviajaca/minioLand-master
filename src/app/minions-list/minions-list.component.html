@@ -1,0 +1,16 @@
+<div class="row row-cols-1 row-cols-md-3 g-4">
+
+    @for (minion of minions; track minion.name) {
+        <div class="col">
+
+            <div class="card h-100" style="width: 18rem;">
+                <img [src]="'/'+minion.img" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{minion.name}}</h5>
+                    <p class="card-text">{{minion.bio}}</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
