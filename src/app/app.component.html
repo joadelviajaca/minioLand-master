@@ -1,11 +1,6 @@
 <app-navbar (onSearch)="search($event)"></app-navbar>
 <div class="container">
 
-  <h2 class="mt-4">Minions <small>a mansalva</small></h2>
-  <hr>
-  
-  
-    
-      <app-minions-list [searchTerm]="searchTerm" ></app-minions-list>
+ <router-outlet></router-outlet>
     
 </div>
