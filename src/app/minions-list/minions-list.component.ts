@@ -3,11 +3,12 @@ import { Minion } from '../interfaces/minion';
 import { MinionService } from '../services/minion.service';
 import { Observable, catchError, ignoreElements, of } from 'rxjs';
 import { AsyncPipe, JsonPipe } from '@angular/common';
+import { Router, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-minions-list',
   standalone: true,
-  imports: [AsyncPipe, JsonPipe],
+  imports: [AsyncPipe, JsonPipe, RouterOutlet],
   templateUrl: './minions-list.component.html',
   styles: [ 'img { width: 50%; position: relative; left: 25%;}']
 })
@@ -18,7 +19,7 @@ export class MinionsListComponent implements OnInit,OnChanges {
   errorMessage: any = null;
   // @Input() minions: Minion[] = [];
   @Input() searchTerm: string = '';
-  constructor(private minionsService: MinionService){}
+  constructor(private minionsService: MinionService, private router: Router){}
 
   ngOnInit(): void {
     // this.minionsService.getMinions()
@@ -40,6 +41,10 @@ export class MinionsListComponent implements OnInit,OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     // this.minions = this.minionsService.getFilterMinions(this.searchTerm)
+  }
+
+  goToDetails(id: number){
+      this.router.navigate(['/minions',id])
   }
   
 }

@@ -18,6 +18,10 @@ export class MinionService {
     return this.http.get<Minion[]>(this.url);
   }
 
+  getMinion(id: number): Observable<Minion> {
+    return this.http.get<Minion>(`${this.url}${id}`) 
+  }
+
 
   //  getFilterMinions(term: string): Minion[]{
   //   return this.minions.filter(minion => minion.name.toLowerCase().includes(term.toLowerCase()));

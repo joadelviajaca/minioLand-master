@@ -28,7 +28,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{minion.name}}</h5>
                                 <p class="card-text">{{minion.bio}}</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                <a (click)="goToDetails(minion.id)" class="btn btn-primary">Go somewhere</a>
                             </div>
                         </div>
                     </div>
@@ -36,7 +36,7 @@
             </div>
 
         }
-        @else {
+        @else if(data.error){
             <h1> Upps! Se ha producido el siguiente error</h1>
             <p> {{data.error.message}} </p>
         }
@@ -47,3 +47,4 @@
 
 }
 
+<router-outlet></router-outlet>
