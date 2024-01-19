@@ -32,4 +32,8 @@ export class MinionDetailsComponent implements OnInit{
     this.router.navigate(['/minions'])
   }
 
+  edit(id: number){
+    this.router.navigate(['edit', id])
+  }
+
 }

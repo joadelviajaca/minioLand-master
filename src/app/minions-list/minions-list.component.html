@@ -29,6 +29,7 @@
                                 <h5 class="card-title">{{minion.name}}</h5>
                                 <p class="card-text">{{minion.bio}}</p>
                                 <a (click)="goToDetails(minion.id)" class="btn btn-primary">Go somewhere</a>
+                                <button class="btn btn-danger" (click)="delete(minion.id)">Delete</button>
                             </div>
                         </div>
                     </div>
